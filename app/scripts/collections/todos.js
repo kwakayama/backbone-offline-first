@@ -7,9 +7,8 @@ backboneOfflineFirst.Collections = backboneOfflineFirst.Collections || {};
 
     backboneOfflineFirst.Collections.TodosCollection = Backbone.Collection.extend({
 
-		url: '/todos',
-
-        model: backboneOfflineFirst.Models.TodoModel
+        model: backboneOfflineFirst.Models.TodoModel,
+        localStorage: new Backbone.LocalStorage('backboneOfflineFirst_todos')
 
     });
 
