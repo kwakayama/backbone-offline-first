@@ -23,6 +23,7 @@ window.backboneOfflineFirst = {
         Backbone.hoodie.account.on('signin', function (user) {
             console.log('main.js (22) :');
         });
+        Backbone.hoodie.account.signUp('joe@example.com', 'secret');
         Backbone.hoodie.account.signIn('joe@example.com', 'secret');
 
         console.log('Hello from Backbone!');
