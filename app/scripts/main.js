@@ -1,0 +1,18 @@
+/*global backboneOfflineFirst, $*/
+
+
+window.backboneOfflineFirst = {
+    Models: {},
+    Collections: {},
+    Views: {},
+    Routers: {},
+    init: function () {
+        'use strict';
+        console.log('Hello from Backbone!');
+    }
+};
+
+$(document).ready(function () {
+    'use strict';
+    backboneOfflineFirst.init();
+});
