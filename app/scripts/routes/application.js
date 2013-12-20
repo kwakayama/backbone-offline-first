@@ -6,7 +6,13 @@ backboneOfflineFirst.Routers = backboneOfflineFirst.Routers || {};
     'use strict';
 
     backboneOfflineFirst.Routers.ApplicationRouter = Backbone.Router.extend({
+		routes: {
+            '': 'defaultAction'
+        },
 
+        defaultAction: function () {
+            new backboneOfflineFirst.Views.TodolistView();
+        }
     });
 
 })();

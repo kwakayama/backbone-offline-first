@@ -1,4 +1,4 @@
-/*global backboneOfflineFirst, $*/
+/*global backboneOfflineFirst, $, Backbone*/
 
 
 window.backboneOfflineFirst = {
@@ -9,6 +9,8 @@ window.backboneOfflineFirst = {
     init: function () {
         'use strict';
         console.log('Hello from Backbone!');
+        new this.Routers.ApplicationRouter();
+        Backbone.history.start();
     }
 };
 
