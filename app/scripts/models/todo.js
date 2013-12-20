@@ -1,11 +1,14 @@
-/*global backboneOfflineFirst, Backbone*/
+/*global backboneOfflineFirst, M*/
 
 backboneOfflineFirst.Models = backboneOfflineFirst.Models || {};
 
 (function () {
 	'use strict';
 
-	backboneOfflineFirst.Models.TodoModel = Backbone.Model.extend({
+	backboneOfflineFirst.Models.TodoModel = M.Model.extend({
+
+		idAttribute: '_id',
+
 		// Default attributes for the todo
 		// and ensure that each todo created has `title` and `completed` keys.
 		defaults: {
@@ -18,7 +21,11 @@ backboneOfflineFirst.Models = backboneOfflineFirst.Models || {};
 			this.save({
 				completed: !this.get('completed')
 			});
-		}
+		},
+		entity: 'todos',
+
+        url: 'http://localhost:8200/bikini/todos',
+
 	});
 
 })();

@@ -1,15 +1,21 @@
-/*global backboneOfflineFirst, Backbone*/
+/*global backboneOfflineFirst, M*/
 
 backboneOfflineFirst.Collections = backboneOfflineFirst.Collections || {};
 
 (function () {
     'use strict';
 
-    backboneOfflineFirst.Collections.TodosCollection = Backbone.Collection.extend({
+    backboneOfflineFirst.Collections.TodosCollection = M.Collection.extend({
 
-		url: '/todos',
+        model: backboneOfflineFirst.Models.TodoModel,
 
-        model: backboneOfflineFirst.Models.TodoModel
+		entity: 'todos',
+
+        url: 'http://localhost:8200/bikini/todos',
+
+        store: M.BikiniStore.create({
+			localStore: M.LocalStorageStore
+        })
 
     });
 
