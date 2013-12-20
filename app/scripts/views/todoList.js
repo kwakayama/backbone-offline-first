@@ -21,6 +21,11 @@ backboneOfflineFirst.Views = backboneOfflineFirst.Views || {};
 			this.render();
 			this.listenTo(this.collection, 'add', this.addTodoItem);
 			this.listenTo(this.collection, 'reset', this.addAllTodoItems);
+			this.listenTo(this.collection, 'all', function(a,b,c,d) {
+				console.log(a,b,c,d);
+			});
+			// this.collection.fetch();
+			this.addAllTodoItems();
 		},
 
 		render: function () {
@@ -29,16 +34,14 @@ backboneOfflineFirst.Views = backboneOfflineFirst.Views || {};
 		},
 
 		createTodo: function (event) {
-			console.log('todoList.js (34) :');
 			event.preventDefault();
 
 			var title = this.$('#new-todo').val().trim();
 
 			if (title) {
-				var todo = new backboneOfflineFirst.Models.TodoModel({
+				this.collection.create( new backboneOfflineFirst.Models.TodoModel({
 					title: title
-				});
-				this.collection.add(todo);
+				}));
 
 				$('#new-todo').val('');
 			}

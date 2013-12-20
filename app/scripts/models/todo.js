@@ -6,6 +6,10 @@ backboneOfflineFirst.Models = backboneOfflineFirst.Models || {};
 	'use strict';
 
 	backboneOfflineFirst.Models.TodoModel = Backbone.Model.extend({
+
+		// models must have a type. maps to type in hoodie store.
+		type: 'todo',
+
 		// Default attributes for the todo
 		// and ensure that each todo created has `title` and `completed` keys.
 		defaults: {

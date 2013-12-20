@@ -7,8 +7,6 @@ backboneOfflineFirst.Collections = backboneOfflineFirst.Collections || {};
 
     backboneOfflineFirst.Collections.TodosCollection = Backbone.Collection.extend({
 
-		url: '/todos',
-
         model: backboneOfflineFirst.Models.TodoModel
 
     });

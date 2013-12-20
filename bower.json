@@ -6,7 +6,9 @@
     "jquery": "~1.9.0",
     "underscore": "~1.4.3",
     "backbone": "~1.0.0",
-    "modernizr": "~2.6.2"
+    "modernizr": "~2.6.2",
+    "backbone-hoodie": "https://github.com/kwakayama/backbone-hoodie.git",
+    "hoodie": "~0.5.1"
   },
   "devDependencies": {}
 }
