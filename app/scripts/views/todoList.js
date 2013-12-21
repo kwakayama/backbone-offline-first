@@ -17,14 +17,21 @@ backboneOfflineFirst.Views = backboneOfflineFirst.Views || {};
 
 		initialize: function () {
 			this.collection = new backboneOfflineFirst.Collections.TodosCollection();
+
 			console.log(this.collection);
+
 			this.render();
+
 			this.listenTo(this.collection, 'add', this.addTodoItem);
 			this.listenTo(this.collection, 'reset', this.addAllTodoItems);
-			this.listenTo(this.collection, 'all', function(a,b,c,d) {
-				console.log(a,b,c,d);
-			});
+			// this.listenTo(this.collection, 'all', function(a,b,c,d) {
+			// 	console.log(a,b,c,d);
+			// });
+
+			// we don't need to fetch.
+			// this is done on initalization of the collection
 			// this.collection.fetch();
+
 			this.addAllTodoItems();
 		},
 
